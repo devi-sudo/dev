@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: anonxmusic-bot
+    env: python
+    region: oregon
+    buildCommand: |
+      # Install Node.js dependencies (if any)
+      npm install
+      
+      # Install Python dependencies
+      pip install -r requirements.txt
+    startCommand: |
+      # Run the Node.js core (if required)
+      node server.js &
+
+      # Run the Python bot with a loop
+      python3 -m SHUKLAMUSIC
+ 
